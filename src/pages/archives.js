@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "gatsby"
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 import qs from 'qs'
-
+import Grid from '@material-ui/core/Grid';
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import axios from 'axios';
@@ -22,8 +22,9 @@ class Archives extends Component {
             (response) => {
                 this.setState({ data: response.data });
                 console.log(this.state.data)
-            }
-        );
+            }, (error) => {
+                console.log(error);
+            });
     }
 
     render() {
@@ -40,17 +41,23 @@ class Archives extends Component {
                     <div className="archives__content">
 
 
-                        {this.state.data !== [] ?
+                        <Grid container >
+                            {this.state.data !== [] ?
+                                this.state.data.map(d => (
 
-                            this.state.data.map(d => (
-                                <Maillot
-                                    key={d.id}
-                                    col={d.col}
-                                    bottom={d.bottom}
-                                    main={d.main}
-                                    leftSleeve={d.leftSleeve}
-                                    rightSleeve={d.rightSleeve} />
-                            )) : ''}
+                                    <Grid item xs={12} md={4}>
+                                        <Maillot
+                                            key={d.id}
+                                            col={d.col}
+                                            bottom={d.bottom}
+                                            main={d.main}
+                                            leftSleeve={d.leftSleeve}
+                                            rightSleeve={d.rightSleeve}
+                                            details={d.details} />
+                                    </Grid>
+                                )) : ''}
+                        </Grid>
+
 
                     </div>
                     <div className="archives__bottom">

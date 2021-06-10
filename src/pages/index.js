@@ -27,12 +27,23 @@ import main2 from '../images/main2.png'
 import main3 from '../images/main3.png'
 import main4 from '../images/main4.png'
 import main5 from '../images/main5.png'
+import main6 from '../images/main6.png'
+import main7 from '../images/main7.png'
+import main8 from '../images/main8.png'
+import main9 from '../images/main9.png'
+import main10 from '../images/main10.png'
+import main11 from '../images/main11.png'
+
 
 import ls1 from '../images/ls1.png'
-import ls2 from '../images/ls4.png'
+import ls2 from '../images/ls2.png'
 import ls3 from '../images/ls3.png'
 import ls4 from '../images/ls4.png'
 import ls5 from '../images/ls5.png'
+import ls6 from '../images/ls6.png'
+import ls7 from '../images/ls7.png'
+import ls8 from '../images/ls8.png'
+
 
 import rs1 from '../images/rs1.png'
 import rs2 from '../images/rs2.png'
@@ -40,9 +51,16 @@ import rs3 from '../images/rs3.png'
 import rs4 from '../images/rs4.png'
 import rs5 from '../images/rs5.png'
 import rs6 from '../images/rs6.png'
+import rs7 from '../images/rs7.png'
+import rs8 from '../images/rs8.png'
+
 
 
 import d1 from '../images/d1.png'
+import d2 from '../images/d2.png'
+import d3 from '../images/d3.png'
+import d4 from '../images/d4.png'
+import d5 from '../images/d5.png'
 
 
 class IndexPage extends Component {
@@ -54,7 +72,8 @@ class IndexPage extends Component {
     leftSleeve: 1,
     rightSleeve: 1,
     details: 1,
-    main: 1
+    main: 1,
+    datails: 1
 
   }
 
@@ -72,7 +91,8 @@ class IndexPage extends Component {
         bottom: this.state.bottom,
         leftSleeve: this.state.leftSleeve,
         rightSleeve: this.state.rightSleeve,
-        main: this.state.main
+        main: this.state.main,
+        details: this.state.details
       }),
     }).then(
       (response) => {
@@ -116,6 +136,13 @@ class IndexPage extends Component {
       this.setState({ rightSleeve: this.state.rightSleeve + 1 })
     } else if (arr === "previous")
       this.setState({ rightSleeve: this.state.rightSleeve - 1 })
+  }
+
+  handleDetails(arr) {
+    if (arr === "next") {
+      this.setState({ details: this.state.details + 1 })
+    } else if (arr === "previous")
+      this.setState({ details: this.state.details - 1 })
   }
 
   render() {
@@ -163,8 +190,8 @@ class IndexPage extends Component {
 
     let imgLs = ls1
     if (this.state.leftSleeve === 0) {
-      this.state.leftSleeve = 5
-      imgLs = ls5
+      this.state.leftSleeve = 8
+      imgLs = ls8
     } else if (this.state.leftSleeve === 1) {
       imgLs = ls1
     } else if (this.state.leftSleeve === 2) {
@@ -176,6 +203,12 @@ class IndexPage extends Component {
     } else if (this.state.leftSleeve === 5) {
       imgLs = ls5
     } else if (this.state.leftSleeve === 6) {
+      imgLs = ls6
+    } else if (this.state.leftSleeve === 7) {
+      imgLs = ls7
+    } else if (this.state.leftSleeve === 8) {
+      imgLs = ls8
+    } else if (this.state.leftSleeve === 9) {
       this.state.leftSleeve = 1
       imgLs = ls1
     }
@@ -183,8 +216,8 @@ class IndexPage extends Component {
 
     let imgRs = rs1
     if (this.state.rightSleeve === 0) {
-      this.state.rightSleeve = 6
-      imgLs = rs6
+      this.state.rightSleeve = 8
+      imgLs = rs8
     } else if (this.state.rightSleeve === 1) {
       imgRs = rs1
     } else if (this.state.rightSleeve === 2) {
@@ -198,6 +231,10 @@ class IndexPage extends Component {
     } else if (this.state.rightSleeve === 6) {
       imgRs = rs6
     } else if (this.state.rightSleeve === 7) {
+      imgRs = rs7
+    } else if (this.state.rightSleeve === 8) {
+      imgRs = rs8
+    } else if (this.state.rightSleeve === 9) {
       this.state.rightSleeve = 1
       imgRs = rs1
     }
@@ -206,8 +243,8 @@ class IndexPage extends Component {
 
     let imgMain = main1
     if (this.state.main === 0) {
-      this.state.main = 5
-      imgLs = main5
+      this.state.main = 11
+      imgLs = main11
     } else if (this.state.main === 1) {
       imgMain = main1
     } else if (this.state.main === 2) {
@@ -219,11 +256,40 @@ class IndexPage extends Component {
     } else if (this.state.main === 5) {
       imgMain = main5
     } else if (this.state.main === 6) {
+      imgMain = main6
+    } else if (this.state.main === 7) {
+      imgMain = main7
+    } else if (this.state.main === 8) {
+      imgMain = main8
+    } else if (this.state.main === 9) {
+      imgMain = main9
+    } else if (this.state.main === 10) {
+      imgMain = main10
+    } else if (this.state.main === 11) {
+      imgMain = main11
+    } else if (this.state.main === 12) {
       this.state.main = 1
       imgMain = main1
     }
 
     let imgDetails = d1
+    if (this.state.details === 0) {
+      this.state.details = 5
+      imgDetails = d5
+    } else if (this.state.details === 1) {
+      imgDetails = d1
+    } else if (this.state.details === 2) {
+      imgDetails = d2
+    } else if (this.state.details === 3) {
+      imgDetails = d3
+    } else if (this.state.details === 4) {
+      imgDetails = d4
+    } else if (this.state.details === 5) {
+      imgDetails = d5
+    } else if (this.state.details === 6) {
+      this.state.details = 1
+      imgDetails = d1
+    }
 
 
 
@@ -239,16 +305,7 @@ class IndexPage extends Component {
             </div>
 
             <div className="gen__main">
-              <div className="gen__main__btns">
-                <p> <span onClick={() => this.handleCol('previous')}> ﹤ </span> COL  <span onClick={() => this.handleCol('next')}> ﹥ </span>
-                </p>
-                <p> <span onClick={() => this.handleLs('previous')}> ﹤ </span> LEFT SLEEVE <span onClick={() => this.handleLs('next')}> ﹥ </span></p>
-                <p> <span onClick={() => this.handleRs('previous')}> ﹤ </span> RIGHT SLEEVE<span onClick={() => this.handleRs('next')}> ﹥ </span></p>
-                <p>  <span onClick={() => this.handleBottom('previous')}> ﹤ </span> BOTTOM <span onClick={() => this.handleBottom('next')}> ﹥ </span></p>
-                <p> <span onClick={() => this.handleMain('previous')}> ﹤ </span> MAIN <span onClick={() => this.handleMain('next')}> ﹥ </span></p>
-                <br />
 
-              </div>
 
 
               <div className="gen__main__maillot">
@@ -284,6 +341,20 @@ class IndexPage extends Component {
                 </div>
 
               </div>
+
+              <div className="gen__main__btns">
+                <p> <span className="gen__main__btns__i" onClick={() => this.handleCol('previous')}> ﹤ </span> COL  <span className="gen__main__btns__i" onClick={() => this.handleCol('next')}> ﹥ </span>
+                </p>
+                <p> <span className="gen__main__btns__i" onClick={() => this.handleLs('previous')}> ﹤ </span> LEFT SLEEVE <span className="gen__main__btns__i" onClick={() => this.handleLs('next')}> ﹥ </span></p>
+                <p> <span className="gen__main__btns__i" onClick={() => this.handleRs('previous')}> ﹤ </span> RIGHT SLEEVE<span className="gen__main__btns__i" onClick={() => this.handleRs('next')}> ﹥ </span></p>
+                <p> <span className="gen__main__btns__i" onClick={() => this.handleMain('previous')}> ﹤ </span> MAIN <span className="gen__main__btns__i" onClick={() => this.handleMain('next')}> ﹥ </span></p>
+                <p>  <span className="gen__main__btns__i" onClick={() => this.handleBottom('previous')}> ﹤ </span> BOTTOM <span className="gen__main__btns__i" onClick={() => this.handleBottom('next')}> ﹥ </span></p>
+                <p>  <span className="gen__main__btns__i" onClick={() => this.handleDetails('previous')}> ﹤ </span> DETAILS <span className="gen__main__btns__i" onClick={() => this.handleDetails('next')}> ﹥ </span></p>
+
+                <br />
+
+              </div>
+
             </div>
             <div className="gen__bottom">
               <div onClick={() => this.handlePost()} className="gen__bottom__save">

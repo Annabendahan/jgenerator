@@ -85,12 +85,12 @@ class IndexPage extends Component {
     axios({
       method: 'post',
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
-      url: 'http://localhost:8080/api/maillots/new',
+      url: 'https://gen-server.herokuapp.com/customers',
       data: qs.stringify({
         col: this.state.col,
         bottom: this.state.bottom,
-        leftSleeve: this.state.leftSleeve,
-        rightSleeve: this.state.rightSleeve,
+        left_sleeve: this.state.leftSleeve,
+        right_sleeve: this.state.rightSleeve,
         main: this.state.main,
         details: this.state.details
       }),

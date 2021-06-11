@@ -18,7 +18,7 @@ class Archives extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8080/api/maillots').then(
+        axios.get('https://gen-server.herokuapp.com/customers').then(
             (response) => {
                 this.setState({ data: response.data });
                 console.log(this.state.data)
@@ -45,14 +45,14 @@ class Archives extends Component {
                             {this.state.data !== [] ?
                                 this.state.data.map(d => (
 
-                                    <Grid item xs={12} md={4}>
+                                    <Grid key={d.id} item xs={12} md={4}>
                                         <Maillot
                                             key={d.id}
                                             col={d.col}
                                             bottom={d.bottom}
                                             main={d.main}
-                                            leftSleeve={d.leftSleeve}
-                                            rightSleeve={d.rightSleeve}
+                                            leftSleeve={d.left_sleeve}
+                                            rightSleeve={d.right_sleeve}
                                             details={d.details} />
                                     </Grid>
                                 )) : ''}

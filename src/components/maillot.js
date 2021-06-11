@@ -155,7 +155,7 @@ class Maillot extends Component {
         } else if (this.props.main === 10) {
             imgMain = main10
         } else if (this.props.main === 11) {
-            imgMain = main11
+            imgMain = main1
         }
 
         let imgDetails = d1
@@ -174,14 +174,14 @@ class Maillot extends Component {
         return (
             <div className="maillot-archive" >
                 <div className="maillot-archive__sub maillot-archive__back">
-                    <StaticImage
-                        src="../images/Back.png"
+                    <img
+                        src={back}
                         alt="Full 1"
                     />
                 </div>
                 <div className="maillot-archive__sub maillot-archive__trait">
-                    <StaticImage
-                        src="../images/Traits.png"
+                    <img
+                        src={traits}
                         alt="Full 1"
                     />
                 </div>

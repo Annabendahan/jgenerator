@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "gatsby"
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 import qs from 'qs'
+import { navigate } from 'gatsby';
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -64,35 +65,63 @@ import d5 from '../images/d5.png'
 
 
 class IndexPage extends Component {
-  state = {
-    data: [],
-    loaded: false,
-    col: 1,
-    bottom: 1,
-    leftSleeve: 1,
-    rightSleeve: 1,
-    details: 1,
-    main: 1,
-    datails: 1
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+      loaded: false,
+      col: 1,
+      bottom: 1,
+      leftSleeve: 1,
+      rightSleeve: 1,
+      details: 1,
+      main: 1,
+      datails: 1,
+      popup: false,
+      value: '',
+    }
 
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    alert('Le nom a été soumis : ' + this.state.value);
+    event.preventDefault();
   }
 
 
 
 
-  handlePost() {
+  handlePop() {
+    this.setState({ popup: !this.state.popup })
+    console.log(this.state.popup)
+  }
+
+
+
+
+  handlePost(e) {
     console.log('cliqked')
+    alert('Thank you ! Check the archives');
+    e.preventDefault();
     axios({
       method: 'post',
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
-      url: 'https://gen-server.herokuapp.com/customers',
+      url: 'http://localhost:5000/customers',
       data: qs.stringify({
         col: this.state.col,
         bottom: this.state.bottom,
         left_sleeve: this.state.leftSleeve,
         right_sleeve: this.state.rightSleeve,
         main: this.state.main,
-        details: this.state.details
+        details: this.state.details,
+        author: this.state.value
       }),
     }).then(
       (response) => {
@@ -100,9 +129,12 @@ class IndexPage extends Component {
       }, (error) => {
         console.log(error);
       });
+    navigate('/archives'); //navigate to edit page
+
   }
 
   handleCol(arr) {
+
 
     if (arr === "next") {
       this.setState({ col: this.state.col + 1 })
@@ -146,6 +178,8 @@ class IndexPage extends Component {
   }
 
   render() {
+
+    console.log(this.props.location.pathname)
 
 
 
@@ -300,6 +334,26 @@ class IndexPage extends Component {
         <Seo title="Generator" />
         <div className="content">
           <div className="gen">
+
+
+            {this.state.popup ?
+              <div className="gen__popup" >
+                <div className="gen__popup__msg">
+                  <div>
+
+                    <p> YOUR JERSEY'S NAME</p>
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+
+                    <div onClick={(e) => this.handlePost(e)} className="gen__popup_submit">
+                      submit
+                  </div>
+                  </div>
+                </div>
+              </div> : ''
+            }
+
+
+
             <div className="gen__title">
               JERSEY__TEMPLATE__GENERATOR__
             </div>
@@ -343,13 +397,13 @@ class IndexPage extends Component {
               </div>
 
               <div className="gen__main__btns">
-                <p> <span className="gen__main__btns__i" onClick={() => this.handleCol('previous')}> ﹤ </span> COL  <span className="gen__main__btns__i" onClick={() => this.handleCol('next')}> ﹥ </span>
+                <p> <span className="gen__main__btns__i" onClick={() => this.handleCol('previous')}> ﹤ </span> COL [{this.state.col}] <span className="gen__main__btns__i" onClick={() => this.handleCol('next')}> ﹥ </span>
                 </p>
-                <p> <span className="gen__main__btns__i" onClick={() => this.handleLs('previous')}> ﹤ </span> LEFT SLEEVE <span className="gen__main__btns__i" onClick={() => this.handleLs('next')}> ﹥ </span></p>
-                <p> <span className="gen__main__btns__i" onClick={() => this.handleRs('previous')}> ﹤ </span> RIGHT SLEEVE<span className="gen__main__btns__i" onClick={() => this.handleRs('next')}> ﹥ </span></p>
-                <p> <span className="gen__main__btns__i" onClick={() => this.handleMain('previous')}> ﹤ </span> MAIN <span className="gen__main__btns__i" onClick={() => this.handleMain('next')}> ﹥ </span></p>
-                <p>  <span className="gen__main__btns__i" onClick={() => this.handleBottom('previous')}> ﹤ </span> BOTTOM <span className="gen__main__btns__i" onClick={() => this.handleBottom('next')}> ﹥ </span></p>
-                <p>  <span className="gen__main__btns__i" onClick={() => this.handleDetails('previous')}> ﹤ </span> DETAILS <span className="gen__main__btns__i" onClick={() => this.handleDetails('next')}> ﹥ </span></p>
+                <p> <span className="gen__main__btns__i" onClick={() => this.handleLs('previous')}> ﹤ </span> LEFT SLEEVE [{this.state.leftSleeve}] <span className="gen__main__btns__i" onClick={() => this.handleLs('next')}> ﹥ </span></p>
+                <p> <span className="gen__main__btns__i" onClick={() => this.handleRs('previous')}> ﹤ </span> RIGHT SLEEVE [{this.state.rightSleeve}]<span className="gen__main__btns__i" onClick={() => this.handleRs('next')}> ﹥ </span></p>
+                <p> <span className="gen__main__btns__i" onClick={() => this.handleMain('previous')}> ﹤ </span> MAIN [{this.state.main}] <span className="gen__main__btns__i" onClick={() => this.handleMain('next')}> ﹥ </span></p>
+                <p>  <span className="gen__main__btns__i" onClick={() => this.handleBottom('previous')}> ﹤ </span> BOTTOM [{this.state.bottom}] <span className="gen__main__btns__i" onClick={() => this.handleBottom('next')}> ﹥ </span></p>
+                <p>  <span className="gen__main__btns__i" onClick={() => this.handleDetails('previous')}> ﹤ </span> DETAILS [{this.state.details}] <span className="gen__main__btns__i" onClick={() => this.handleDetails('next')}> ﹥ </span></p>
 
                 <br />
 
@@ -357,7 +411,7 @@ class IndexPage extends Component {
 
             </div>
             <div className="gen__bottom">
-              <div onClick={() => this.handlePost()} className="gen__bottom__save">
+              <div onClick={() => this.handlePop()} className="gen__bottom__save">
                 SAVE
               </div>
               <Link to="archives" className="gen__bottom__archives">

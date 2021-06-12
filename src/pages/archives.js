@@ -14,26 +14,64 @@ import Maillot from '../components/maillot'
 class Archives extends Component {
 
     state = {
-        data: []
+        data: [],
+
     }
 
     componentDidMount() {
-        axios.get('https://gen-server.herokuapp.com/customers').then(
+        axios.get('http://localhost:5000/customers').then(
             (response) => {
                 this.setState({ data: response.data });
                 console.log(this.state.data)
             }, (error) => {
                 console.log(error);
             });
+        window.onscroll = function (ev) {
+            if (document.getElementById("down") !== null || document.getElementById("down") !== null) {
+                if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+                    // you're at the bottom of the page
+                    console.log("Bottom of page");
+                    document.getElementById("down").style.display = "none";
+                    document.getElementById("top").style.display = "block";
+
+                } else {
+                    document.getElementById("top").style.display = "none";
+                    document.getElementById("down").style.display = "block";
+
+                }
+            }
+        };
     }
 
+    handleScrollDown(e) {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    handleScrollTop(e) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+
     render() {
+        console.log(this.props.location.pathname)
+
+
+
+
+
+        console.log(this.state.pos)
+
         return (
 
             <Layout>
                 <Seo title="Archives" />
 
                 <div className="archives">
+                    <div className="archives__arrow">
+                        <p id='down' onClick={(e) => this.handleScrollDown(e)}> DOWN ↓</p>
+                        <p id='top' onClick={(e) => this.handleScrollTop(e)}> TOP ↑</p>
+                    </div>
+
                     <div className="archives__title">
                         <p> JERSEY__TEMPLATE__ARCHIVES__</p>
                     </div>
@@ -53,7 +91,9 @@ class Archives extends Component {
                                             main={d.main}
                                             leftSleeve={d.left_sleeve}
                                             rightSleeve={d.right_sleeve}
-                                            details={d.details} />
+                                            details={d.details}
+                                            author={d.author} />
+
                                     </Grid>
                                 )) : ''}
                         </Grid>
@@ -63,7 +103,7 @@ class Archives extends Component {
                     <div className="archives__bottom">
                         <Link to="/" className="archives__bottom__link">
                             <div>
-                                <p> -------> BACK TO THE GENERATOR__</p>
+                                <p> ﹤----- BACK TO THE GENERATOR__</p>
                             </div>
                         </Link>
                     </div>

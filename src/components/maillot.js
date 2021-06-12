@@ -172,37 +172,44 @@ class Maillot extends Component {
         }
 
         return (
+
             <div className="maillot-archive" >
-                <div className="maillot-archive__sub maillot-archive__back">
-                    <img
-                        src={back}
-                        alt="Full 1"
-                    />
+                <div className="maillot-archive__maillot" >
+                    <div className="maillot-archive__sub maillot-archive__back">
+                        <img
+                            src={back}
+                            alt="Full 1"
+                        />
+                    </div>
+                    <div className="maillot-archive__sub maillot-archive__trait">
+                        <img
+                            src={traits}
+                            alt="Full 1"
+                        />
+                    </div>
+                    <div className="maillot-archive__sub maillot__main">
+                        <img src={imgMain} alt='bottom' />
+                    </div>
+                    <div className="maillot-archive__sub maillot__left-sleeve">
+                        <img src={imgLs} alt='bottom' />
+                    </div>
+                    <div className="maillot-archive__sub maillot__right-sleeve">
+                        <img src={imgRs} alt='bottom' />
+                    </div>
+                    <div className="maillot-archive__sub maillot__details">
+                        <img src={imgDetails} alt='Col' />
+                    </div>
+                    <div className="maillot-archive__sub maillot-archive__bottom">
+                        <img src={imgBottom} alt='rr' />
+                    </div>
+                    <div className="maillot-archive__sub maillot-archive__col">
+                        <img src={imgCol} alt='rr' />
+                    </div>
                 </div>
-                <div className="maillot-archive__sub maillot-archive__trait">
-                    <img
-                        src={traits}
-                        alt="Full 1"
-                    />
+                <div className="maillot-archive__name" >
+                    <p>*{this.props.author}*</p>
                 </div>
-                <div className="maillot-archive__sub maillot__main">
-                    <img src={imgMain} alt='bottom' />
-                </div>
-                <div className="maillot-archive__sub maillot__left-sleeve">
-                    <img src={imgLs} alt='bottom' />
-                </div>
-                <div className="maillot-archive__sub maillot__right-sleeve">
-                    <img src={imgRs} alt='bottom' />
-                </div>
-                <div className="maillot-archive__sub maillot__details">
-                    <img src={imgDetails} alt='Col' />
-                </div>
-                <div className="maillot-archive__sub maillot-archive__bottom">
-                    <img src={imgBottom} alt='rr' />
-                </div>
-                <div className="maillot-archive__sub maillot-archive__col">
-                    <img src={imgCol} alt='rr' />
-                </div>
+
 
             </div>
         )

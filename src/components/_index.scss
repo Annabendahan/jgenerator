@@ -31,9 +31,33 @@
 }
 
 .gen {
+    position: relative;
     height: 900px;
     @include breakpoint(m) {
         height: 620px;
+    }
+    &__popup {
+        position: absolute;
+
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        z-index: 99;
+        &__msg {
+            width: 305px;
+            height: 150px;
+            background: red;
+            background: url(../images/popup.png);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
     }
     &__title {
         height: 8%;
@@ -129,9 +153,23 @@
     p {
         margin-bottom: 0px;
     }
-    height: 700px;
+    height: 750px;
+    position: relative;
+
     @include breakpoint(m) {
         height: 620px;
+    }
+    &__arrow {
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include breakpoint(m) {
+            display: none;
+        }
     }
     &__title {
         text-align: center;
@@ -144,18 +182,26 @@
     }
     &__content {
         overflow: scroll;
-        height: 70%;
+        height: 85%;
         @include breakpoint(m) {
             height: 70%;
         }
     }
     &__bottom {
+        width: 350px;
         text-align: center;
+
         height: 18%;
         display: flex;
         align-items: center;
         justify-content: space-around;
         flex-direction: column;
+
+        @include breakpoint(m) {
+            background: none;
+            position: relative;
+            margin: auto;
+        }
 
         &__link {
             text-decoration: none;
@@ -169,10 +215,22 @@
     height: 300px;
     width: 290px;
     margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &__sub {
         position: absolute;
         top: 0px;
         left: 0px;
     }
+    &__name {
+        position: absolute;
+        bottom: -10px;
+    }
+}
+
+#top {
+    display: none;
 }

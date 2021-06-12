@@ -51,12 +51,27 @@
             width: 305px;
             height: 150px;
             background: red;
-            background: url(../images/popup.png);
+            background: url(../images/popup.svg);
             z-index: 999;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
+        }
+        &__submit {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        &__bd {
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            z-index: 99;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
     &__title {
@@ -141,6 +156,9 @@
             width: 170px;
             padding: 7px;
             margin: 0px auto 5px;
+            &:hover {
+                cursor: pointer;
+            }
         }
         &__archives {
             text-decoration: none;

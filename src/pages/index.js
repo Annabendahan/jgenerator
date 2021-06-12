@@ -78,7 +78,7 @@ class IndexPage extends Component {
       main: 1,
       datails: 1,
       popup: false,
-      value: '',
+      value: ''
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -337,14 +337,16 @@ class IndexPage extends Component {
 
 
             {this.state.popup ?
+
               <div className="gen__popup" >
+                <div onClick={() => this.handlePop()} className="gen__popup__bd" ></div>
                 <div className="gen__popup__msg">
                   <div>
 
                     <p> YOUR JERSEY'S NAME</p>
                     <input type="text" value={this.state.value} onChange={this.handleChange} />
 
-                    <div onClick={(e) => this.handlePost(e)} className="gen__popup_submit">
+                    <div onClick={(e) => this.handlePost(e)} className="gen__popup__submit">
                       submit
                   </div>
                   </div>

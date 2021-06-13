@@ -108,12 +108,12 @@ class IndexPage extends Component {
 
   handlePost(e) {
     console.log('cliqked')
-    alert('Thank you ! Check the archives');
+    alert('Thank you ! ♡ ');
     e.preventDefault();
     axios({
       method: 'post',
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
-      url: 'http://localhost:5000/customers',
+      url: 'https://gen-server.herokuapp.com/customers',
       data: qs.stringify({
         col: this.state.col,
         bottom: this.state.bottom,

@@ -206,9 +206,11 @@ class Maillot extends Component {
                         <img src={imgCol} alt='rr' />
                     </div>
                 </div>
-                <div className="maillot-archive__name" >
-                    <p>*{this.props.author}*</p>
-                </div>
+                { this.props.author ?
+                    <div className="maillot-archive__name" >
+                        <p>*{this.props.author}*</p>
+                    </div> : ''
+                }
 
 
             </div>

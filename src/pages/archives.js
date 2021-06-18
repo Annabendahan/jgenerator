@@ -15,7 +15,14 @@ class Archives extends Component {
 
     state = {
         data: [],
+        spe: '',
+        popup: false,
+        speName: ''
+    }
 
+
+    handlePop() {
+        this.setState({ popup: !this.state.popup })
     }
 
     componentDidMount() {
@@ -51,6 +58,18 @@ class Archives extends Component {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    openSpe(id) {
+        axios.get(`https://gen-server.herokuapp.com/customers/${id}`).then(
+            (response) => {
+                this.setState({ spe: response.data, popup: !this.state.popup });
+                console.log(this.state.spe)
+            }, (error) => {
+                console.log(error);
+            });
+    }
+
+
+
 
     render() {
         console.log(this.props.location.pathname)
@@ -66,7 +85,34 @@ class Archives extends Component {
             <Layout>
                 <Seo title="Archives" />
 
+
+
                 <div className="archives">
+
+                    {this.state.popup ?
+
+                        <div className="archives__spe">
+                            <div onClick={() => this.handlePop()} className="archives__spe__bd" ></div>
+
+                            <div className="archives__spe__maillot">
+
+                                <Maillot
+                                    key={this.state.spe.id}
+                                    col={this.state.spe.col}
+                                    bottom={this.state.spe.bottom}
+                                    main={this.state.spe.main}
+                                    leftSleeve={this.state.spe.left_sleeve}
+                                    rightSleeve={this.state.spe.right_sleeve}
+                                    details={this.state.spe.details}
+                                />
+
+                                <p> *{this.state.spe.author}*</p>
+
+
+
+                            </div>
+                        </div>
+                        : ' '}
                     <div className="archives__arrow">
                         <p id='down' onClick={(e) => this.handleScrollDown(e)}> DOWN ↓</p>
                         <p id='top' onClick={(e) => this.handleScrollTop(e)}> TOP ↑</p>
@@ -84,15 +130,22 @@ class Archives extends Component {
                                 this.state.data.map(d => (
 
                                     <Grid key={d.id} item xs={12} md={4}>
-                                        <Maillot
-                                            key={d.id}
-                                            col={d.col}
-                                            bottom={d.bottom}
-                                            main={d.main}
-                                            leftSleeve={d.left_sleeve}
-                                            rightSleeve={d.right_sleeve}
-                                            details={d.details}
-                                            author={d.author} />
+                                        <div onClick={(e) => this.openSpe(d.id)}>
+                                            <div className='archives__maillot'>
+                                                <Maillot
+                                                    key={d.id}
+                                                    col={d.col}
+                                                    bottom={d.bottom}
+                                                    main={d.main}
+                                                    leftSleeve={d.left_sleeve}
+                                                    rightSleeve={d.right_sleeve}
+                                                    details={d.details}
+                                                    author={d.author}
+                                                />
+
+                                            </div>
+                                        </div>
+
 
                                     </Grid>
                                 )) : ''}
@@ -113,7 +166,7 @@ class Archives extends Component {
 
 
                 </div>
-            </Layout>
+            </Layout >
         )
     }
 

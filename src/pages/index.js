@@ -100,7 +100,7 @@ class IndexPage extends Component {
 
   handlePop() {
     this.setState({ popup: !this.state.popup })
-    console.log(this.state.popup)
+
   }
 
 

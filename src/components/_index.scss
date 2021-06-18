@@ -64,10 +64,12 @@
             }
         }
         &__bd {
-            width: 100%;
-            height: 100%;
-
-            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: black;
+            opacity: 0.1;
+            position: fixed;
+            top: 0px;
             z-index: 99;
             &:hover {
                 cursor: pointer;
@@ -126,6 +128,7 @@
                 margin: 0;
             }
             &__i {
+                padding: 5px;
                 &:hover {
                     cursor: pointer;
                 }
@@ -176,6 +179,70 @@
 
     @include breakpoint(m) {
         height: 620px;
+    }
+    &__maillot {
+        height: 300px;
+        width: 290px;
+        margin: auto;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__spe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        &__bd {
+            width: 100vw;
+            height: 100vh;
+            background: black;
+            opacity: 0.1;
+            position: fixed;
+            top: 0px;
+            z-index: 99;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &__maillot {
+            z-index: 999;
+            background: url(../images/spemob.svg);
+            background-size: cover;
+            margin: auto;
+            width: 100%;
+
+            min-height: 440px;
+
+            @include breakpoint(m) {
+                background: url(../images/spedesk.svg);
+                background-size: cover;
+                width: 500px;
+                min-height: 480px;
+            }
+            img {
+                margin: auto;
+
+                @include breakpoint(m) {
+                    width: 90%;
+                }
+            }
+            p {
+                margin-top: 65px;
+                text-align: center;
+                z-index: 999;
+                position: relative;
+                @include breakpoint(m) {
+                    margin-top: 125px;
+                }
+            }
+        }
     }
     &__arrow {
         position: fixed;
@@ -230,13 +297,18 @@
 
 .maillot-archive {
     position: relative;
-    height: 300px;
-    width: 290px;
+    min-height: 300px;
     margin: auto;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    img {
+        margin: auto;
+        @include breakpoint(m) {
+            margin: -20px auto 0;
+        }
+    }
 
     &__sub {
         position: absolute;

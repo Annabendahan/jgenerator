@@ -17,7 +17,8 @@ class Archives extends Component {
         data: [],
         spe: '',
         popup: false,
-        speName: ''
+        speName: '',
+        loaded: false
     }
 
 
@@ -28,7 +29,7 @@ class Archives extends Component {
     componentDidMount() {
         axios.get('https://gen-server.herokuapp.com/customers').then(
             (response) => {
-                this.setState({ data: response.data });
+                this.setState({ data: response.data, loaded: true });
                 console.log(this.state.data)
             }, (error) => {
                 console.log(error);
@@ -72,13 +73,8 @@ class Archives extends Component {
 
 
     render() {
-        console.log(this.props.location.pathname)
+        console.log(this.state.loaded)
 
-
-
-
-
-        console.log(this.state.pos)
 
         return (
 
@@ -125,7 +121,13 @@ class Archives extends Component {
                     <div className="archives__content">
 
 
+                        {this.state.loaded === false ?
+                            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                            : ''}
+
                         <Grid container >
+
+
                             {this.state.data !== [] ?
                                 this.state.data.map(d => (
 

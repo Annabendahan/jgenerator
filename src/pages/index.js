@@ -274,7 +274,7 @@ class IndexPage extends Component {
     let imgMain = main1
     if (this.state.main === 0) {
       this.state.main = 11
-      imgLs = main11
+      imgMain = main11
     } else if (this.state.main === 1) {
       imgMain = main1
     } else if (this.state.main === 2) {

@@ -57,8 +57,12 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
+            p {
+                margin-bottom: 15px;
+            }
         }
         &__submit {
+            padding: 7px;
             &:hover {
                 cursor: pointer;
             }
@@ -126,6 +130,7 @@
             z-index: 9;
             @include breakpoint(m) {
                 margin: 0;
+                margin-top: 45px;
             }
             &__i {
                 padding: 5px;

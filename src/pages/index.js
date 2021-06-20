@@ -107,8 +107,8 @@ class IndexPage extends Component {
 
 
   handlePost(e) {
-    console.log('cliqked')
-    alert('Thank you ! ♡ ');
+
+    alert('Thank you ! ☻ ');
     e.preventDefault();
     axios({
       method: 'post',
@@ -178,10 +178,6 @@ class IndexPage extends Component {
   }
 
   render() {
-
-    console.log(this.props.location.pathname)
-
-
 
     let imgCol = col1
     if (this.state.col === 0) {
@@ -399,7 +395,7 @@ class IndexPage extends Component {
               </div>
 
               <div className="gen__main__btns">
-                <p> <span className="gen__main__btns__i" onClick={() => this.handleCol('previous')}> ﹤ </span> COL [{this.state.col}] <span className="gen__main__btns__i" onClick={() => this.handleCol('next')}> ﹥ </span>
+                <p> <span className="gen__main__btns__i" onClick={() => this.handleCol('previous')}> ﹤ </span> NECK [{this.state.col}] <span className="gen__main__btns__i" onClick={() => this.handleCol('next')}> ﹥ </span>
                 </p>
                 <p> <span className="gen__main__btns__i" onClick={() => this.handleLs('previous')}> ﹤ </span> LEFT SLEEVE [{this.state.leftSleeve}] <span className="gen__main__btns__i" onClick={() => this.handleLs('next')}> ﹥ </span></p>
                 <p> <span className="gen__main__btns__i" onClick={() => this.handleRs('previous')}> ﹤ </span> RIGHT SLEEVE [{this.state.rightSleeve}]<span className="gen__main__btns__i" onClick={() => this.handleRs('next')}> ﹥ </span></p>

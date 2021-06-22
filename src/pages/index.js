@@ -247,7 +247,7 @@ class IndexPage extends Component {
     let imgRs = rs1
     if (this.state.rightSleeve === 0) {
       this.state.rightSleeve = 8
-      imgLs = rs8
+      imgRs = rs8
     } else if (this.state.rightSleeve === 1) {
       imgRs = rs1
     } else if (this.state.rightSleeve === 2) {

@@ -36,6 +36,25 @@
     @include breakpoint(m) {
         height: 620px;
     }
+
+    &__loader {
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        z-index: 9999;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        &__content {
+            display: flex;
+            justify-content: space-between;
+            width: 80px;
+        }
+    }
     &__popup {
         position: absolute;
 

@@ -78,11 +78,27 @@ class IndexPage extends Component {
       main: 1,
       datails: 1,
       popup: false,
-      value: ''
+      value: '',
+      count: 1
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    setInterval(
+      function () {
+        this.setState({ count: this.state.count + 1 })
+      }.bind(this),
+      400
+    )
+    setTimeout(
+      function () {
+        this.setState({ loaded: true })
+      }.bind(this),
+      3000
+    )
   }
 
 
@@ -329,6 +345,27 @@ class IndexPage extends Component {
       <Layout>
         <Seo title="Generator" />
         <div className="content">
+          {!this.state.loaded ?
+            <div className="gen__loader">
+              <div className="gen__loader__content">
+
+                <p> +  </p>
+                {this.state.count >= 2 ?
+                  <p> -  </p> : ''}
+
+                {this.state.count >= 3 ?
+                  <p> -  </p> : ''}
+
+                {this.state.count >= 4 ?
+                  <p> -  </p> : ''}
+                {this.state.count >= 5 ?
+                  <p> -  </p> : ''}
+                {this.state.count >= 6 ?
+                  <p> +  </p> : ''}
+
+              </div>
+            </div> : ''
+          }
           <div className="gen">
 
 
@@ -344,7 +381,7 @@ class IndexPage extends Component {
 
                     <div onClick={(e) => this.handlePost(e)} className="gen__popup__submit">
                       submit
-                  </div>
+                    </div>
                   </div>
                 </div>
               </div> : ''
@@ -415,7 +452,7 @@ class IndexPage extends Component {
               <Link to="archives" className="gen__bottom__archives">
                 <div>
                   ---------﹥ CHECK THE ARCHIVES__
-              </div>
+                </div>
               </Link>
             </div>
           </div>

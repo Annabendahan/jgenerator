@@ -5,6 +5,7 @@ import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 import back from '../images/back.png'
 import traits from '../images/traits.png'
 
+
 import col1 from '../images/col1.png'
 import col2 from '../images/col2.png'
 import col3 from '../images/col3.png'
@@ -12,10 +13,12 @@ import col4 from '../images/col4.png'
 import col5 from '../images/col5.png'
 import col6 from '../images/col6.png'
 import col7 from '../images/col7.png'
+import col8 from '../images/col8.png'
 
 import bottom1 from '../images/bottom1.png'
 import bottom2 from '../images/bottom2.png'
 import bottom3 from '../images/bottom3.png'
+import bottom4 from '../images/bottom4.png'
 
 import main1 from '../images/main1.png'
 import main2 from '../images/main2.png'
@@ -28,6 +31,11 @@ import main8 from '../images/main8.png'
 import main9 from '../images/main9.png'
 import main10 from '../images/main10.png'
 import main11 from '../images/main11.png'
+import main12 from '../images/main12.png'
+import main13 from '../images/main13.png'
+import main14 from '../images/main14.png'
+import main15 from '../images/main15.png'
+
 
 
 import ls1 from '../images/ls1.png'
@@ -38,6 +46,8 @@ import ls5 from '../images/ls5.png'
 import ls6 from '../images/ls6.png'
 import ls7 from '../images/ls7.png'
 import ls8 from '../images/ls8.png'
+import ls9 from '../images/ls9.png'
+
 
 
 import rs1 from '../images/rs1.png'
@@ -48,6 +58,7 @@ import rs5 from '../images/rs5.png'
 import rs6 from '../images/rs6.png'
 import rs7 from '../images/rs7.png'
 import rs8 from '../images/rs8.png'
+import rs9 from '../images/rs9.png'
 
 
 
@@ -56,6 +67,10 @@ import d2 from '../images/d2.png'
 import d3 from '../images/d3.png'
 import d4 from '../images/d4.png'
 import d5 from '../images/d5.png'
+import d6 from '../images/d6.png'
+import d7 from '../images/d7.png'
+import d8 from '../images/d8.png'
+import d9 from '../images/d9.png'
 
 
 
@@ -77,6 +92,8 @@ class Maillot extends Component {
             imgCol = col6
         } else if (this.props.col === 7) {
             imgCol = col7
+        } else if (this.props.col === 8) {
+            imgCol = col8
         }
 
 
@@ -87,6 +104,8 @@ class Maillot extends Component {
             imgBottom = bottom2
         } else if (this.props.bottom === 3) {
             imgBottom = bottom3
+        } else if (this.props.bottom === 4) {
+            imgBottom = bottom4
         }
 
 
@@ -107,6 +126,8 @@ class Maillot extends Component {
             imgLs = ls7
         } else if (this.props.leftSleeve === 8) {
             imgLs = ls8
+        } else if (this.props.leftSleeve === 9) {
+            imgLs = ls9
         }
 
 
@@ -128,6 +149,8 @@ class Maillot extends Component {
             imgRs = rs7
         } else if (this.props.rightSleeve === 8) {
             imgRs = rs8
+        } else if (this.props.rightSleeve === 9) {
+            imgRs = rs9
         }
 
 
@@ -155,7 +178,15 @@ class Maillot extends Component {
         } else if (this.props.main === 10) {
             imgMain = main10
         } else if (this.props.main === 11) {
-            imgMain = main1
+            imgMain = main11
+        } else if (this.props.main === 12) {
+            imgMain = main12
+        } else if (this.props.main === 13) {
+            imgMain = main13
+        } else if (this.props.main === 14) {
+            imgMain = main14
+        } else if (this.props.main === 15) {
+            imgMain = main15
         }
 
         let imgDetails = d1
@@ -169,6 +200,14 @@ class Maillot extends Component {
             imgDetails = d4
         } else if (this.props.details === 5) {
             imgDetails = d5
+        } else if (this.props.details === 6) {
+            imgDetails = d6
+        } else if (this.props.details === 7) {
+            imgDetails = d7
+        } else if (this.props.details === 8) {
+            imgDetails = d8
+        } else if (this.props.details === 9) {
+            imgDetails = d9
         }
 
         return (
@@ -206,7 +245,7 @@ class Maillot extends Component {
                         <img src={imgCol} alt='rr' />
                     </div>
                 </div>
-                { this.props.author ?
+                {this.props.author ?
                     <div className="maillot-archive__name" >
                         <p>*{this.props.author}*</p>
                     </div> : ''

@@ -472,9 +472,9 @@ class IndexPage extends Component {
               <div className="gen__main__btns">
                 <p> <span className="gen__main__btns__i" onClick={() => this.handleCol('previous')}> ﹤ </span> NECK [{this.state.col}] <span className="gen__main__btns__i" onClick={() => this.handleCol('next')}> ﹥ </span>
                 </p>
+                <p> <span className="gen__main__btns__i" onClick={() => this.handleMain('previous')}> ﹤ </span> MAIN [{this.state.main}] <span className="gen__main__btns__i" onClick={() => this.handleMain('next')}> ﹥ </span></p>
                 <p> <span className="gen__main__btns__i" onClick={() => this.handleLs('previous')}> ﹤ </span> LEFT SLEEVE [{this.state.leftSleeve}] <span className="gen__main__btns__i" onClick={() => this.handleLs('next')}> ﹥ </span></p>
                 <p> <span className="gen__main__btns__i" onClick={() => this.handleRs('previous')}> ﹤ </span> RIGHT SLEEVE [{this.state.rightSleeve}]<span className="gen__main__btns__i" onClick={() => this.handleRs('next')}> ﹥ </span></p>
-                <p> <span className="gen__main__btns__i" onClick={() => this.handleMain('previous')}> ﹤ </span> MAIN [{this.state.main}] <span className="gen__main__btns__i" onClick={() => this.handleMain('next')}> ﹥ </span></p>
                 <p>  <span className="gen__main__btns__i" onClick={() => this.handleBottom('previous')}> ﹤ </span> BOTTOM [{this.state.bottom}] <span className="gen__main__btns__i" onClick={() => this.handleBottom('next')}> ﹥ </span></p>
                 <p>  <span className="gen__main__btns__i" onClick={() => this.handleDetails('previous')}> ﹤ </span> DETAILS [{this.state.details}] <span className="gen__main__btns__i" onClick={() => this.handleDetails('next')}> ﹥ </span></p>
 

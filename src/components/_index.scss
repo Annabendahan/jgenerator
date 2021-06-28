@@ -255,7 +255,7 @@
             margin: auto;
             width: 100%;
 
-            min-height: 450px;
+            min-height: 460px;
 
             @include breakpoint(m) {
                 background: url(../images/spedesk.svg);
@@ -265,6 +265,7 @@
             }
             img {
                 margin: auto;
+                width: 90%;
 
                 @include breakpoint(m) {
                     width: 90%;

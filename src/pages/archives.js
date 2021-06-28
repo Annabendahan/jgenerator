@@ -109,10 +109,10 @@ class Archives extends Component {
                             </div>
                         </div>
                         : ' '}
-                    <div className="archives__arrow">
+                    {/* <div className="archives__arrow">
                         <p id='down' onClick={(e) => this.handleScrollDown(e)}> DOWN ↓</p>
                         <p id='top' onClick={(e) => this.handleScrollTop(e)}> TOP ↑</p>
-                    </div>
+                    </div> */}
 
                     <div className="archives__title">
                         <p> JERSEY__TEMPLATE__ARCHIVES__</p>

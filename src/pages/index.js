@@ -8,43 +8,43 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import axios from 'axios';
 
-import back from '../images/back.png'
-import traits from '../images/traits.png'
+import back from '../images/back.svg'
+import traits from '../images/traits.svg'
 
-import col1 from '../images/col1.png'
-import col2 from '../images/col2.png'
-import col3 from '../images/col3.png'
-import col4 from '../images/col4.png'
-import col5 from '../images/col5.png'
-import col6 from '../images/col6.png'
-import col7 from '../images/col7.png'
-import col8 from '../images/col8.png'
+import col1 from '../images/col1.svg'
+import col2 from '../images/col2.svg'
+import col3 from '../images/col3.svg'
+import col4 from '../images/col4.svg'
+import col5 from '../images/col5.svg'
+import col6 from '../images/col6.svg'
+import col7 from '../images/col7.svg'
+import col8 from '../images/col8.svg'
 
-import bottom1 from '../images/bottom1.png'
-import bottom2 from '../images/bottom2.png'
-import bottom3 from '../images/bottom3.png'
-import bottom4 from '../images/bottom4.png'
+import bottom1 from '../images/bottom1.svg'
+import bottom2 from '../images/bottom2.svg'
+import bottom3 from '../images/bottom3.svg'
+import bottom4 from '../images/bottom4.svg'
 
 import main1 from '../images/main1.png'
-import main2 from '../images/main2.png'
-import main3 from '../images/main3.png'
-import main4 from '../images/main4.png'
-import main5 from '../images/main5.png'
-import main6 from '../images/main6.png'
-import main7 from '../images/main7.png'
-import main8 from '../images/main8.png'
-import main9 from '../images/main9.png'
+import main2 from '../images/main2.svg'
+import main3 from '../images/main3.svg'
+import main4 from '../images/main4.svg'
+import main5 from '../images/main5.svg'
+import main6 from '../images/main6.svg'
+import main7 from '../images/main7.svg'
+import main8 from '../images/main8.svg'
+import main9 from '../images/main9.svg'
 import main10 from '../images/main10.png'
-import main11 from '../images/main11.png'
+import main11 from '../images/main11.svg'
 import main12 from '../images/main12.png'
 import main13 from '../images/main13.png'
-import main14 from '../images/main14.png'
-import main15 from '../images/main15.png'
+import main14 from '../images/main14.svg'
+import main15 from '../images/main15.svg'
 
 
 import ls1 from '../images/ls1.png'
-import ls2 from '../images/ls2.png'
-import ls3 from '../images/ls3.png'
+import ls2 from '../images/ls2.svg'
+import ls3 from '../images/ls3.svg'
 import ls4 from '../images/ls4.png'
 import ls5 from '../images/ls5.png'
 import ls6 from '../images/ls6.png'
@@ -55,8 +55,8 @@ import ls9 from '../images/ls9.png'
 
 
 import rs1 from '../images/rs1.png'
-import rs2 from '../images/rs2.png'
-import rs3 from '../images/rs3.png'
+import rs2 from '../images/rs2.svg'
+import rs3 from '../images/rs3.svg'
 import rs4 from '../images/rs4.png'
 import rs5 from '../images/rs5.png'
 import rs6 from '../images/rs6.png'
@@ -68,12 +68,12 @@ import rs9 from '../images/rs9.png'
 
 import d1 from '../images/d1.png'
 import d2 from '../images/d2.png'
-import d3 from '../images/d3.png'
+import d3 from '../images/d3.svg'
 import d4 from '../images/d4.png'
-import d5 from '../images/d5.png'
-import d6 from '../images/d6.png'
-import d7 from '../images/d7.png'
-import d8 from '../images/d8.png'
+import d5 from '../images/d5.svg'
+import d6 from '../images/d6.svg'
+import d7 from '../images/d7.svg'
+import d8 from '../images/d8.svg'
 import d9 from '../images/d9.png'
 
 
@@ -159,7 +159,9 @@ class IndexPage extends Component {
       }, (error) => {
         console.log(error);
       });
+
     navigate('/archives'); //navigate to edit page
+
 
   }
 
@@ -438,6 +440,7 @@ class IndexPage extends Component {
               <div className="gen__main__maillot">
                 <div className="gen__main__maillot__sub ">
                   <img
+                    style={{ width: 400 }}
                     src={traits}
                     alt="Trait"
                   />
@@ -446,25 +449,75 @@ class IndexPage extends Component {
                   <img
                     src={back}
                     alt="back"
+                    style={{ width: 400 }}
                   />
                 </div>
-                <div className="gen__main__maillot__sub ">
-                  <img src={imgMain} alt='bottom' />
+                <div >
+                  <img className={`gen__main__maillot__sub ${this.state.main === 1 ? 'visible' : 'hidden'}`} src={main1} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 2 ? 'visible' : 'hidden'}`} src={main2} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 3 ? 'visible' : 'hidden'}`} src={main3} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 4 ? 'visible' : 'hidden'}`} src={main4} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 5 ? 'visible' : 'hidden'}`} src={main5} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 6 ? 'visible' : 'hidden'}`} src={main6} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 7 ? 'visible' : 'hidden'}`} src={main7} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 8 ? 'visible' : 'hidden'}`} src={main8} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 9 ? 'visible' : 'hidden'}`} src={main9} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 10 ? 'visible' : 'hidden'}`} src={main10} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 11 ? 'visible' : 'hidden'}`} src={main11} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 12 ? 'visible' : 'hidden'}`} src={main12} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 13 ? 'visible' : 'hidden'}`} src={main13} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 14 ? 'visible' : 'hidden'}`} src={main14} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.main === 15 ? 'visible' : 'hidden'}`} src={main15} style={{ width: 400 }} alt='main' />
+
                 </div>
-                <div className="gen__main__maillot__sub ">
-                  <img src={imgLs} alt='bottom' />
+                <div >
+                  <img className={`gen__main__maillot__sub ${this.state.leftSleeve === 1 ? 'visible' : 'hidden'}`} src={ls1} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.leftSleeve === 2 ? 'visible' : 'hidden'}`} src={ls2} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.leftSleeve === 3 ? 'visible' : 'hidden'}`} src={ls3} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.leftSleeve === 4 ? 'visible' : 'hidden'}`} src={ls4} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.leftSleeve === 5 ? 'visible' : 'hidden'}`} src={ls5} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.leftSleeve === 6 ? 'visible' : 'hidden'}`} src={ls6} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.leftSleeve === 7 ? 'visible' : 'hidden'}`} src={ls7} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.leftSleeve === 8 ? 'visible' : 'hidden'}`} src={ls8} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.leftSleeve === 9 ? 'visible' : 'hidden'}`} src={ls9} style={{ width: 400 }} alt='main' />
                 </div>
-                <div className="gen__main__maillot__sub ">
-                  <img src={imgRs} alt='bottom' />
+                <div >
+                  <img className={`gen__main__maillot__sub ${this.state.rightSleeve === 1 ? 'visible' : 'hidden'}`} src={rs1} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.rightSleeve === 2 ? 'visible' : 'hidden'}`} src={rs2} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.rightSleeve === 3 ? 'visible' : 'hidden'}`} src={rs3} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.rightSleeve === 4 ? 'visible' : 'hidden'}`} src={rs4} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.rightSleeve === 5 ? 'visible' : 'hidden'}`} src={rs5} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.rightSleeve === 6 ? 'visible' : 'hidden'}`} src={rs6} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.rightSleeve === 7 ? 'visible' : 'hidden'}`} src={rs7} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.rightSleeve === 8 ? 'visible' : 'hidden'}`} src={rs8} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.rightSleeve === 9 ? 'visible' : 'hidden'}`} src={rs9} style={{ width: 400 }} alt='main' />
                 </div>
-                <div className="gen__main__maillot__sub ">
-                  <img src={imgDetails} alt='Col' />
+                <div >
+                  <img className={`gen__main__maillot__sub ${this.state.details === 1 ? 'visible' : 'hidden'}`} src={d1} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.details === 2 ? 'visible' : 'hidden'}`} src={d2} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.details === 3 ? 'visible' : 'hidden'}`} src={d3} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.details === 4 ? 'visible' : 'hidden'}`} src={d4} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.details === 5 ? 'visible' : 'hidden'}`} src={d5} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.details === 6 ? 'visible' : 'hidden'}`} src={d6} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.details === 7 ? 'visible' : 'hidden'}`} src={d7} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.details === 8 ? 'visible' : 'hidden'}`} src={d8} style={{ width: 400 }} alt='main' />
+                  <img className={`gen__main__maillot__sub ${this.state.details === 9 ? 'visible' : 'hidden'}`} src={d9} style={{ width: 400 }} alt='main' />
                 </div>
-                <div className="gen__main__maillot__sub ">
-                  <img src={imgBottom} alt='bottom' />
+                <div>
+                  <img className={`gen__main__maillot__sub ${this.state.bottom === 1 ? 'visible' : 'hidden'}`} src={bottom1} style={{ width: 400 }} alt='bottom' />
+                  <img className={`gen__main__maillot__sub ${this.state.bottom === 2 ? 'visible' : 'hidden'}`} src={bottom2} style={{ width: 400 }} alt='bottom' />
+                  <img className={`gen__main__maillot__sub ${this.state.bottom === 3 ? 'visible' : 'hidden'}`} src={bottom3} style={{ width: 400 }} alt='bottom' />
+                  <img className={`gen__main__maillot__sub ${this.state.bottom === 4 ? 'visible' : 'hidden'}`} src={bottom4} style={{ width: 400 }} alt='bottom' />
                 </div>
-                <div className="gen__main__maillot__sub">
-                  <img src={imgCol} alt='Col' />
+                <div>
+                  <img className={`gen__main__maillot__sub ${this.state.col === 1 ? 'visible' : 'hidden'}`} src={col1} style={{ width: 400 }} alt='col' />
+                  <img className={`gen__main__maillot__sub ${this.state.col === 2 ? 'visible' : 'hidden'}`} src={col2} style={{ width: 400 }} alt='col' />
+                  <img className={`gen__main__maillot__sub ${this.state.col === 3 ? 'visible' : 'hidden'}`} src={col3} style={{ width: 400 }} alt='col' />
+                  <img className={`gen__main__maillot__sub ${this.state.col === 4 ? 'visible' : 'hidden'}`} src={col4} style={{ width: 400 }} alt='col' />
+                  <img className={`gen__main__maillot__sub ${this.state.col === 5 ? 'visible' : 'hidden'}`} src={col5} style={{ width: 400 }} alt='col' />
+                  <img className={`gen__main__maillot__sub ${this.state.col === 6 ? 'visible' : 'hidden'}`} src={col6} style={{ width: 400 }} alt='col' />
+                  <img className={`gen__main__maillot__sub ${this.state.col === 7 ? 'visible' : 'hidden'}`} src={col7} style={{ width: 400 }} alt='col' />
+                  <img className={`gen__main__maillot__sub ${this.state.col === 8 ? 'visible' : 'hidden'}`} src={col8} style={{ width: 400 }} alt='col' />
                 </div>
 
               </div>

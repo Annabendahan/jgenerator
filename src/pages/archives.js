@@ -27,6 +27,7 @@ class Archives extends Component {
     }
 
     componentDidMount() {
+
         axios.get('https://gen-server.herokuapp.com/customers').then(
             (response) => {
                 this.setState({ data: response.data, loaded: true });

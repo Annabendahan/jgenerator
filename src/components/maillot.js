@@ -209,49 +209,49 @@ class Maillot extends Component {
 
         return (
 
-            <div className="maillot-archive" >
-                <div className="maillot-archive__maillot" >
-                    <div className="maillot-archive__sub maillot-archive__back">
-                        <img
-                            src={back}
-                            alt="Full 1"
-                            style={{ width: 400 }}
-                        />
-                    </div>
-                    <div className="maillot-archive__sub maillot-archive__trait">
-                        <img
-                            style={{ width: 400 }}
-                            src={traits}
-                            alt="Full 1"
-                        />
-                    </div>
-                    <div className="maillot-archive__sub maillot__main">
-                        <img src={imgMain} style={{ width: 400 }} alt='bottom' />
-                    </div>
-                    <div className="maillot-archive__sub maillot__left-sleeve">
-                        <img src={imgLs} style={{ width: 400 }} alt='bottom' />
-                    </div>
-                    <div className="maillot-archive__sub maillot__right-sleeve">
-                        <img src={imgRs} style={{ width: 400 }} alt='bottom' />
-                    </div>
-                    <div className="maillot-archive__sub maillot__details">
-                        <img src={imgDetails} style={{ width: 400 }} alt='Col' />
-                    </div>
-                    <div className="maillot-archive__sub maillot-archive__bottom">
-                        <img src={imgBottom} style={{ width: 400 }} alt='rr' />
-                    </div>
-                    <div className="maillot-archive__sub maillot-archive__col">
-                        <img src={imgCol} style={{ width: 400 }} alt='rr' />
-                    </div>
+            <div className="maillot" >
+                <div className="maillot__sub maillot__back">
+                    <img
+                        src={back}
+                        alt="Full 1"
+                        style={{ width: 400 }}
+                    />
                 </div>
-                {this.props.author ?
-                    <div className="maillot-archive__name" >
-                        <p>*{this.props.author}*</p>
-                    </div> : ''
+                <div className="maillot__sub maillot__trait">
+                    <img
+                        style={{ width: 400 }}
+                        src={traits}
+                        alt="Full 1"
+                    />
+                </div>
+                <div className="maillot__sub maillot__main">
+                    <img src={imgMain} style={{ width: 400 }} alt='bottom' />
+                </div>
+                <div className="maillot__sub maillot__left-sleeve">
+                    <img src={imgLs} style={{ width: 400 }} alt='bottom' />
+                </div>
+                <div className="maillot__sub maillot__right-sleeve">
+                    <img src={imgRs} style={{ width: 400 }} alt='bottom' />
+                </div>
+                <div className="maillot__sub maillot__details">
+                    <img src={imgDetails} style={{ width: 400 }} alt='Col' />
+                </div>
+                <div className="maillot__sub maillot__bottom">
+                    <img src={imgBottom} style={{ width: 400 }} alt='rr' />
+                </div>
+                <div className="maillot__sub maillot__col">
+                    <img src={imgCol} style={{ width: 400 }} alt='rr' />
+                </div>
+
+                {
+                    this.props.author ?
+                        <div className="maillot__name" >
+                            <p>*{this.props.author}*</p>
+                        </div> : ''
                 }
 
 
-            </div>
+            </div >
         )
     }
 }

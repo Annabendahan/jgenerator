@@ -81,32 +81,23 @@ class Archives extends Component {
 
             <Layout>
                 <Seo title="Archives" />
-
-
-
                 <div className="archives">
-
                     {this.state.popup ?
-
                         <div className="archives__spe">
                             <div onClick={() => this.handlePop()} className="archives__spe__bd" ></div>
-
                             <div className="archives__spe__maillot">
-
-                                <Maillot
-                                    key={this.state.spe.id}
-                                    col={this.state.spe.col}
-                                    bottom={this.state.spe.bottom}
-                                    main={this.state.spe.main}
-                                    leftSleeve={this.state.spe.left_sleeve}
-                                    rightSleeve={this.state.spe.right_sleeve}
-                                    details={this.state.spe.details}
-                                />
-
+                                <div className="archives__spe__maillot__content">
+                                    <Maillot
+                                        key={this.state.spe.id}
+                                        col={this.state.spe.col}
+                                        bottom={this.state.spe.bottom}
+                                        main={this.state.spe.main}
+                                        leftSleeve={this.state.spe.left_sleeve}
+                                        rightSleeve={this.state.spe.right_sleeve}
+                                        details={this.state.spe.details}
+                                    />
+                                </div>
                                 <p> *{this.state.spe.author}*</p>
-
-
-
                             </div>
                         </div>
                         : ' '}
@@ -120,8 +111,6 @@ class Archives extends Component {
                     </div>
 
                     <div className="archives__content">
-
-
                         {this.state.loaded === false ?
                             <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
                             : ''}

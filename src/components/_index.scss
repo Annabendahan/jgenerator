@@ -216,7 +216,7 @@
     }
     &__maillot {
         height: 300px;
-        width: 290px;
+        width: 280px;
         margin: auto;
         &:hover {
             cursor: pointer;
@@ -249,14 +249,17 @@
         }
 
         &__maillot {
+            &__content {
+                @include breakpoint(m) {
+                    padding-left: 9%;
+                }
+            }
             z-index: 999;
             background: url(../images/spemob.svg);
             background-size: cover;
             margin: auto;
             width: 100%;
-
             min-height: 460px;
-
             @include breakpoint(m) {
                 background: url(../images/spedesk.svg);
                 background-size: cover;
@@ -265,8 +268,7 @@
             }
             img {
                 margin: auto;
-                width: 90%;
-
+                width: 85%;
                 @include breakpoint(m) {
                     width: 90%;
                 }
@@ -334,7 +336,7 @@
     }
 }
 
-.maillot-archive {
+.maillot {
     position: relative;
     min-height: 300px;
     margin: auto;
